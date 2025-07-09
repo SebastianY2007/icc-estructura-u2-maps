@@ -1,6 +1,6 @@
 package controllers;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public class Ejercicios {
 
@@ -23,14 +23,30 @@ public class Ejercicios {
      *
      * Ejemplo 3:
      * Input: str1 = "triangle", str2 = "integral"
-     * Output: true
+     * Output: true 
      * Explicación: Ambas cadenas tienen los mismos caracteres con la misma
      * frecuencia.
      */
     public static boolean areAnagrams(String str1, String str2) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (str1.length() != str2.length()) return false;
 
+        Map<Character, Integer> map = new java.util.HashMap<>();
+
+        for (char c : str1.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+
+        for (char c : str2.toCharArray()) {
+            if (!map.containsKey(c)) return false;
+            map.put(c, map.get(c) - 1);
+            if (map.get(c) == 0) map.remove(c);
+        }
+
+        return map.isEmpty();
     }
+
+
+
 
     /*
      * Dado un array de números enteros y un objetivo, retorna los índices de dos

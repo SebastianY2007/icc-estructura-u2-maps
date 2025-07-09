@@ -64,7 +64,7 @@ public class Mapa {
     }
 
     public void ejemploConTreeMap(){
-         TreeMap<Integer, String> personas = new TreeMap<>();
+        TreeMap<Integer, String> personas = new TreeMap<>();
         personas.put(1, "Juan");
         personas.put(2, "Pedro");
         personas.put(3, "Pablo");
