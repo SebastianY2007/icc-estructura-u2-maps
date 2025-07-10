@@ -4,6 +4,7 @@ import controllers.EmpleadoDAO;
 import controllers.EmpleadoDAOHashMap;
 import controllers.EmpleadoDAOTreeMap;
 import controllers.Mapa;
+import java.util.Arrays;
 import models.Empleado;
 
 public class App {
@@ -56,6 +57,25 @@ public class App {
     }
 
     private static void runEjercicios() {
-        Ejercicios.areAnagrams("listen", "silent");
+        Ejercicios ejercicios = new Ejercicios();
+
+        System.out.println("\nContando caracteres para 'hola':");
+        ejercicios.contarCaracteres("hola");
+
+        System.out.println("\nAnagramas:");
+        System.out.println("'listen' y 'silent' son anagramas? -> " + ejercicios.sonAnagramas("listen", "silent"));
+        System.out.println("'hello' y 'bello' son anagramas? -> " + ejercicios.sonAnagramas("hello", "bello"));
+        System.out.println("'triangle' y 'integral' son anagramas? -> " + Ejercicios.areAnagrams("triangle", "integral"));
+
+        System.out.println("\nSumatoria de dos:");
+        int[] nums1 = {9, 2, 3, 6};
+        int objetivo1 = 5;
+        int[] resultado1 = ejercicios.sumatoriaDeDos(nums1, objetivo1);
+        System.out.println("Para nums:" + Arrays.toString(nums1) + " y objetivo:" + objetivo1 + ", resultado: " + Arrays.toString(resultado1));
+
+        int[] nums2 = {9, 2, 3, 6};
+        int objetivo2 = 10;
+        int[] resultado2 = ejercicios.sumatoriaDeDos(nums2, objetivo2);
+        System.out.println("Para nums:" + Arrays.toString(nums2) + " y objetivo:" + objetivo2 + ", resultado: " + Arrays.toString(resultado2));
     }
 }

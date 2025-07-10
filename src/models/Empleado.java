@@ -53,7 +53,7 @@ public class Empleado implements Comparable<Empleado>{
 
     @Override
     public String toString() {
-        return "\nID: " + id + "\nNombre: " + name + "\nPosicion: " + position + "\n";
+        return "ID: " + id + "Nombre: " + name + "Posicion: " + position;
     }
 
     @Override
